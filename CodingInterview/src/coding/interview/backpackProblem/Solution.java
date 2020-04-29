@@ -60,22 +60,4 @@ public class Solution {
 
     }
 
-
-    boolean isToConflictWithClasses(CourseClass one, List<CourseClass> courseClasses){
-        for (CourseClass cc : courseClasses){
-            if (cc.startWeek > one.endWeek || cc.endWeek < one.startWeek){
-                // 一门课在另外一门课开始上课之前结束
-                // 或一门课在另外一门课结束之后开始
-                // 则两门课程不冲突
-                continue;
-            }else {
-                if(hasConflicts(one.schedules, cc.scheudles)){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-
 }
